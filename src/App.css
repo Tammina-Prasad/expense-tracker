@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4f46e5;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+h3 {
+  margin: 30px 0 15px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+h4 {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.inc-exp-container > div:hover {
+  transform: translateY(-5px);
+}
+
+.inc-exp-container > div:first-child {
+  border-left: 5px solid var(--success);
+}
+
+.inc-exp-container > div:last-child {
+  border-left: 5px solid var(--danger);
+}
+
+.money {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.money.plus {
+  color: var(--success);
+}
+
+.money.minus {
+  color: var(--danger);
+}
+
+label {
+  display: block;
+  margin: 15px 0 8px;
+  font-weight: 500;
+}
+
+input[type='text'],
+input[type='number'] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+.list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.list li {
+  background: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: .3s;
+}
+
+.list li:hover {
+  transform: translateX(4px);
+}
+
+.list li.plus {
+  border-left: 5px solid var(--success);
+}
+
+.list li.minus {
+  border-left: 5px solid var(--danger);
+}
+
+.delete-btn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--danger);
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: .3s;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+@media(max-width:600px){
+
+.container{
+    width:95%;
+    padding:20px;
+}
+
+.inc-exp-container{
+    flex-direction:column;
+}
+
+}
+/* ---------- Header ---------- */
+
+.header {
+  max-width: 500px;
+  margin: 20px auto 0;
+  padding: 25px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo-icon {
+  font-size: 42px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.header h1 {
+  margin: 0;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .logo-icon {
+    font-size: 34px;
+    padding: 10px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+}
+/*========== Income & Expense Cards ==========*/
+
+.income-card,
+.expense-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.income-card:hover,
+.expense-card:hover {
+  transform: translateY(-6px);
+}
+
+.income-card {
+  border-top: 5px solid #22c55e;
+}
+
+.expense-card {
+  border-top: 5px solid #ef4444;
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.income-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.expense-icon {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.money.plus,
+.money.minus {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/*========== Empty History ==========*/
+
+.empty-history {
+  background: #ffffff;
+  border: 2px dashed #d1d5db;
+  border-radius: 16px;
+  padding: 35px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.empty-icon {
+  font-size: 50px;
+  color: #6366f1;
+  margin-bottom: 15px;
+}
+
+.empty-history h4 {
+  margin-bottom: 8px;
+  color: #374151;
+  font-size: 18px;
+}
+
+.empty-history p {
+  color: #6b7280;
+  font-size: 14px;
+}
+.balance-amount {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #111827;
+}
